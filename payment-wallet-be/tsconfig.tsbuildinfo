@@ -1,1 +1,1 @@
-{"root":["./src/index.ts"],"version":"5.9.3"}
+{"root":["./src/congif.ts","./src/db.ts","./src/index.ts","./src/routes/account.routes.ts","./src/routes/index.route.ts","./src/routes/user.routes.ts"],"errors":true,"version":"5.9.3"}
