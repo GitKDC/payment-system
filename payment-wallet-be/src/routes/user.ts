@@ -1,6 +1,6 @@
 import { Router} from "express";
 import { Request, Response } from "express";
-import { User } from "../db";
+import { Account, User } from "../db";
 import { safeParse, z } from 'zod';
 import { required } from "zod/mini";
 import { JWT_SECRET } from "../config";
@@ -48,6 +48,11 @@ userRouter.post('/signup', async (req: Request, res: Response) => {
 
     const userId = user._id;
     
+    await Account.create({
+        userId,
+        balance: 1 + Math.random() * 10000
+    })
+
     const token = jwt.sign({
         userId
     }, JWT_SECRET);
